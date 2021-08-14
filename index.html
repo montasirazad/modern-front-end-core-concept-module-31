@@ -7,10 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <ul id='ul'>
+
+        
+    </ul>
 
     <script>
-        
+        const url =`https://jsonplaceholder.typicode.com/users`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => showNames(data))
+
+
+        const showNames = (data) => {
+            console.log(data);
+
+        }
     </script>
 </body>
 </html>
