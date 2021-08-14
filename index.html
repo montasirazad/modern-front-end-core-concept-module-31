@@ -10,13 +10,19 @@
     body{
         text-align: center;
     }
+
+    #user-div{
+         border: 5px solid rgb(11, 4, 80);
+        background-color: aqua;
+        padding: 20px;
+    }
 </style>
 <body>
     <h1>31-3 Template, dynamically create HTML elements based on data</h1>
-    <ul id='ul'>
+    <div id='user-div'>
 
 
-    </ul>
+    </div>
 
     <script>
         const url =`https://jsonplaceholder.typicode.com/users`
@@ -28,8 +34,8 @@
       function showNames(data) {
           for (let i = 0; i < data.length; i++) {
               const element = data[i];
-               const ul = document.getElementById('ul');
-               const li =document.createElement('li');
+               const ul = document.getElementById('user-div');
+               const li =document.createElement('div');
                li.innerHTML =` <h1>${element.name}</h1>
                <h2>${element.email}</h2>
                `
