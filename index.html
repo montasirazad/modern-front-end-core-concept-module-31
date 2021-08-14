@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
 <body>
+    <h1>31-3 Template, dynamically create HTML elements based on data</h1>
     <ul id='ul'>
 
-        
+
     </ul>
 
     <script>
@@ -17,12 +23,22 @@
         fetch(url)
         .then(res => res.json())
         .then(data => showNames(data))
+         
 
-
-        const showNames = (data) => {
-            console.log(data);
-
-        }
+      function showNames(data) {
+          for (let i = 0; i < data.length; i++) {
+              const element = data[i];
+               const ul = document.getElementById('ul');
+               const li =document.createElement('li');
+               li.innerHTML =` <h1>${element.name}</h1>
+               <h2>${element.email}</h2>
+               `
+               ul.appendChild(li)
+              console.log(element.name)
+              
+          }
+      }
+         
     </script>
 </body>
 </html>
