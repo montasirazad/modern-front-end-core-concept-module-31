@@ -16,6 +16,12 @@
         background-color: aqua;
         padding: 20px;
     }
+    .li-user{
+        border: 3px dotted rebeccapurple;
+        padding:15px;
+        border-radius: 20px;
+        margin: 15px;
+    }
 </style>
 <body>
     <h1>31-3 Template, dynamically create HTML elements based on data</h1>
@@ -36,11 +42,21 @@
               const element = data[i];
                const ul = document.getElementById('user-div');
                const li =document.createElement('div');
+               li.className = 'li-user'
                li.innerHTML =` <h1>${element.name}</h1>
                <h2>${element.email}</h2>
+
+<p>${element.company.bs}</p>
+<h3>Address</h3>
+<p>street :${element.address.street}</p>
+<p>suite :${element.address.suite}</p>
+<p>zip code :${element.address.zipcode}</p>
+<p>city :${element.address.city}</p>
+ 
+
                `
                ul.appendChild(li)
-              console.log(element.name)
+              console.log(element)
               
           }
       }
